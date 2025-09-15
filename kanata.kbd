@@ -26,7 +26,7 @@
 
   (deflayer arrow
    _   _   _   _   _   _   _   _   _   _
-   _   _   _   _   _   left   down   up   right   _
+   _   _   _   _   _   _   left   down   up   right   _
    _   _   @arr   _   _   _   _   _   _   _
   )
 
