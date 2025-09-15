@@ -1,7 +1,7 @@
   (defsrc
    u i o
    caps tab f d h j k l
-   spc KeyM Comma Period
+   KeyM Comma Period
   )
   (defvar
    tap-time 200
@@ -10,6 +10,7 @@
   (defalias
    caps (tap-hold 200 200 esc lctl)
    tab (tap-hold $tap-time $hold-time tab (layer-toggle arrow))
+   del del  ;; Alias for the true delete key action
    num (tap-hold $tap-time $hold-time f (layer-toggle numbers))
   )
   (deflayer base
@@ -19,7 +20,7 @@
   )
   (deflayer arrow
    _ _ _
-   _ _ _ _ left down up right
+   _ _ @del _ left down up right
    _ _ _
   )
   (deflayer numbers
