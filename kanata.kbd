@@ -4,7 +4,7 @@
 (defsrc
  a   z   e   r   t   y   u   i   o   p
  caps   q   s   d   f   g   h   j   k   l   Semicolon
- w   x   c   v   b   n   ,   Comma   Period   Slash
+ w   x   c   v   b   n   KeyM   Comma   Period   Slash
  )
 
 (defvar
