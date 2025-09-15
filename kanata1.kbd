@@ -1,0 +1,33 @@
+ (defcfg
+  process-unmapped-keys yes
+)
+
+(defalias
+  num_layer (tap-hold 200 200 KeyF (layer-toggle num_layer))
+)
+
+(defsrc
+  Escape  Digit1    Digit2    Digit3    Digit4    Digit5    Digit6    Digit7    Digit8    Digit9    Digit0    Minus    Equal    Backspace
+  Tab     KeyQ      KeyW      KeyE      KeyR      KeyT      KeyY      KeyU      KeyI      KeyO      KeyP      BracketLeft  BracketRight  Backslash
+  CapsLock KeyA     KeyS      KeyD      KeyF      KeyG      KeyH      KeyJ      KeyK      KeyL      Semicolon Quote      Enter
+  ShiftLeft KeyZ    KeyX      KeyC      KeyV      KeyB      KeyN      KeyM      Comma     Period    Slash     ShiftRight
+  ControlLeft MetaLeft AltLeft           Space              AltRight  MetaRight ControlRight
+)
+
+(deflayer base
+  Escape  Digit1    Digit2    Digit3    Digit4    Digit5    Digit6    Digit7    Digit8    Digit9    Digit0    Minus    Equal    Backspace
+  Tab     KeyQ      KeyW      KeyE      KeyR      KeyT      KeyY      KeyU      KeyI      KeyO      KeyP      BracketLeft  BracketRight  Backslash
+  CapsLock KeyA     KeyS      KeyD      @num_layer  KeyG      KeyH      KeyJ      KeyK      KeyL      Semicolon Quote      Enter
+  ShiftLeft KeyZ    KeyX      KeyC      KeyV      KeyB      KeyN      KeyM      Comma     Period    Slash     ShiftRight
+  ControlLeft MetaLeft AltLeft           Space              AltRight  MetaRight ControlRight
+)
+
+(deflayer num_layer
+  _       _        _        _        _        _        _        _        _        _        _        _        _        _
+  _       _        _        _        _        _        _        _        Numpad1  Numpad2  Numpad3  _        _        _
+  _       _        _        _        @num_layer  _        _        _        Numpad4  Numpad5  Numpad6  _        _
+  _       _        _        _        _        _        _        _        Numpad7  Numpad8  Numpad9  _
+  _       _        _                 Numpad0              _        _        _
+)
+
+

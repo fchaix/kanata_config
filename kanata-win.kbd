@@ -1,0 +1,47 @@
+ (defcfg
+  process-unmapped-keys yes
+)
+
+(defalias
+  num  (tap-hold 200 200 KeyF (layer-toggle numpad))
+  pairs (tap-hold 200 200 KeyD (layer-toggle pairs))
+  
+  lp (unicode "(")
+  rp (unicode ")")
+  lr (unicode "{")
+  rr (unicode "}")
+  ls (unicode "[")
+  rs (unicode "]"
+)
+
+(defsrc
+  esc  1    2    3    4    5       6    7    8    9    0       -    =    bspc
+  tab            a    z    e    r    t       y    u    i    o    p       [    ]    ret 
+  caps           q    s    d    f    g       h    j    k    l    m       '    \ 
+  lsft   `       w    x    c    v    b       n    ,    ;    .    /       rsft
+  lctl           lmet lalt          spc             ralt
+)
+
+(deflayer base
+  esc  1    2    3    4    5       6    7    8    9    0       -    =    bspc
+  tab            a    z    e    r    t       y    u    i    o    p       [    ]    ret 
+  caps           q    s    @pairs    @num    g       h    j    k    l    m       '    \ 
+  lsft   `       w    x    c    v    b       n    ,    ;    .    /       rsft
+  lctl           lmet lalt          spc             ralt
+)
+
+(deflayer numpad
+  esc  1    2    3    4    5       6    7    8    9    0       -    =    bspc
+  tab            a    z    e    r    t       y    Numpad1    Numpad2    Numpad3    p       [    ]    ret 
+  caps           q    s    d    @num    g       h    Numpad4    Numpad5    Numpad6    m       '    \ 
+  lsft   `       w    x    c    v    b       n    ,    Numpad7    Numpad8    Numpad9       rsft
+  lctl           lmet lalt          Numpad0             ralt
+)
+
+(deflayer pairs
+  esc  1    2    3        4    5       6    7    8    9    0       -    =    bspc
+  tab            a    z    e        r    t       y    @lr    @rr    o    p       [    ]    ret 
+  caps           q    s    @pairs   f    g       h    @lp  @rp    l    m       '    \ 
+  lsft   `       w    x    c        v    b       n    @ls    @rs    .    /       rsft
+  lctl           lmet lalt      spc             ralt
+)
