@@ -1,4 +1,4 @@
-|#
+#|
 (defcfg
  process-unmapped-keys yes
  )
@@ -52,7 +52,7 @@
    lsft   `       w    x    c        v    b       n    @ls    @rs    :    !       rsft
    lctl           lmet lalt      spc             ralt
   )
-#|
+|#
 
   (defsrc
    u i o
