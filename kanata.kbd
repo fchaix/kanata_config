@@ -3,8 +3,9 @@
  )
 
   (defalias
-   num  (tap-hold 200 200 KeyF (layer-toggle numpad))
-   pairs (tap-hold 200 200 KeyD (layer-toggle pairs))
+   num  (tap-hold 200 200 f (layer-toggle numpad))
+   pairs (tap-hold 200 200 d (layer-toggle pairs))
+   qshft (tap-hold 200 200 q lsft)
 
    lp (unicode "(")
    rp (unicode ")")
@@ -14,27 +15,25 @@
    rs (unicode "]")
   )
 
-
-(deflocalkeys-win
-  ; 190
-  : 191
-  ! 223
-)
+  (deflocalkeys-win
+   : 191
+   ! 223
+  )
 
   (defsrc
    esc  1    2    3    4    5       6    7    8    9    0       -    =    bspc
-   tab            a    z    e    r    t       y    u    i    o    p       [    ]    ret 
-   caps           q    s    d    f    g       h    j    k    l    m       '    \ 
-   lsft   `       w    x    c    v    b       n    ,    ;    :    !       rsft
-   lctl           lmet lalt          spc             ralt
+   tab  a    z    e    r    t       y    u    i    o    p       [    ]    ret 
+   caps q    s    d    f    g       h    j    k    l    m       '    \ 
+   lsft `    w    x    c    v    b       n    ,    ;    :    !       rsft
+   lctl lmet lalt          spc             ralt
   )
 
   (deflayer base
    esc  1    2    3    4    5       6    7    8    9    0       -    =    bspc
-   tab            a    z    e    r    t       y    u    i    o    p       [    ]    ret 
-   caps           q    s    @pairs    @num    g       h    j    k    l    m       '    \ 
-   lsft   `       w    x    c    v    b       n    ,    ;    :    !       rsft
-   lctl           lmet lalt          spc             ralt
+   tab  a    z    e    r    t       y    u    i    o    p       [    ]    ret 
+   caps @qshft s    @pairs @num g       h    j    k    l    m       '    \ 
+   lsft `    w    x    c    v    b       n    ,    ;    :    !       rsft
+   lctl lmet lalt          spc             ralt
   )
 
   (deflayer numpad
