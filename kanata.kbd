@@ -14,7 +14,7 @@
 
   (defalias
    caps  (tap-hold 200 200 esc (tap-hold $tap-time $hold-time f (layer-toggle numbers)))
-   arr   (tap-hold $tap-time $hold-time tab (layer-toggle arrow))
+   arr   (tap-hold $tap-time $hold-time  c    (layer-toggle arrow))
    ;; num   (tap-hold $tap-time $hold-time f (layer-toggle numbers))
   )
 
