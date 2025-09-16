@@ -11,6 +11,7 @@
    num  (tap-hold 200 200 esc (layer-toggle numpad))
    pairs (tap-hold 200 200 d (layer-toggle pairs))
    qshft (tap-hold 200 200 q lsft)
+   a (tap-hold $tap-time $tap-time a (layer-toggle arrows))
 
    lp (unicode "(")
    rp (unicode ")")
@@ -52,7 +53,7 @@
 
   (deflayer base
    esc  1      2    3    4    5       6    7    8    9    0       -    =    bspc
-   tab  a      z    e    r    t       y    u    i    o    p       [    ]    ret 
+   tab  @a     z    e    r    t       y    u    i    o    p       [    ]    ret 
    @num @q     @s   @d   @f   g       h    @j   @k   @l   @m      '    \
    lsft @pairs w    x    c    v       b    n    ,    ;    :       !       rsft
    spc
@@ -76,8 +77,8 @@
 
   (deflayer arrows
    _  _    _    _    _    _       _    _    _    _    _       _       _    _
-   _  _    _    _    _    _       _    _    _    _    _       _       _    _ 
-   _  _    _    _    _    _       _    _    _    _    _       _       _ 
+   _  @a    _    _    _    _       _    _    _    _    _       _       _    _ 
+   _  _    _    _    _    _       ArrowLeft    ArrowDown    ArrowUp    ArrowRight    _       _       _ 
    _  _    _    _    _    _       _    _    _    _    _       _       _
    _
   )
