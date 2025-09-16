@@ -30,7 +30,7 @@
 
   (deflayer base
    _   _   _   _   _   _   _   _   _   _
-   @caps   @q   @s   @d   @f   _  _   @j   @k   @l   @m   _
+   @caps   @q   @s   @d   @f   _  _   @j   @k   @l   @m
    _   _   @arr   _   _   _   _   _   _   _
    _
   )
