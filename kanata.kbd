@@ -18,16 +18,23 @@
    rr (unicode "}")
    ls (unicode "[")
    rs (unicode "]")
+   quo 1
+   dot (unicode ".")
+   com (unicode ",")
+   das (unicode "-")
+   plu (unicode "+")
+   moi (unicode "-")
+   mul (unicode "*")
 
    ;; Homerow mods
-   q (multi f24 (tap-hold $tap-time $hold-time q lmet))
-   s (multi f24 (tap-hold $tap-time $hold-time s lalt))
-   d (multi f24 (tap-hold $tap-time $hold-time d lsft))
-   f (multi f24 (tap-hold $tap-time $hold-time f lctl))
-   j (multi f24 (tap-hold $tap-time $hold-time j rctl))
-   k (multi f24 (tap-hold $tap-time $hold-time k rsft))
-   l (multi f24 (tap-hold $tap-time $hold-time l ralt))
-   m (multi f24 (tap-hold $tap-time $hold-time m rmet))
+   q (tap-hold $tap-time $hold-time q lmet)
+   s (tap-hold $tap-time $hold-time s lalt)
+   d (tap-hold $tap-time $hold-time d lsft)
+   f (tap-hold $tap-time $hold-time f lctl)
+   j (tap-hold $tap-time $hold-time j rctl)
+   k (tap-hold $tap-time $hold-time k rsft)
+   l (tap-hold $tap-time $hold-time l ralt)
+   m (tap-hold $tap-time $hold-time m rmet)
   )
 
   (deflocalkeys-win
@@ -39,23 +46,23 @@
    esc  1    2    3    4    5       6    7    8    9    0       -    =    bspc
    tab  a    z    e    r    t       y    u    i    o    p       [    ]    ret 
    caps q    s    d    f    g       h    j    k    l    m       '    \ 
-   lsft `    w    x    c    v       b       n    ,    ;    :    !       rsft
+   lsft IntlBackslash    w    x    c    v       b    n    ,    ;    :       !    rsft
    spc
   )
 
   (deflayer base
    esc  1      2    3    4    5       6    7    8    9    0       -    =    bspc
    tab  a      z    e    r    t       y    u    i    o    p       [    ]    ret 
-   @num @q   @s  @d    @f   g       h    @j   @k   @l   @m      '    \
-   lsft @pairs w    x    c    v       b    n    ,    ;    :    !       rsft
+   @num @q     @s   @d   @f   g       h    @j   @k   @l   @m      '    \
+   lsft @pairs w    x    c    v       b    n    ,    ;    :       !       rsft
    spc
   )
 
   (deflayer numpad
-   _  _    _    _    _    _       _    _    _    _    _       _    _    _
-   _            _    _    _    _    _       _    Numpad1    Numpad2    Numpad3    _       _    _    _ 
-   @num           _    _    _    _    _       _    Numpad4    Numpad5    Numpad6    _       _    _ 
-   _   _       _    _    _    _    _       _    Numpad7    Numpad8   Numpad9       _    _
+   _     _    _    _    _    _       _       _          _          _         _        _     _    _
+   _     _    _    _    _    _       @dot    Numpad1    Numpad2    Numpad3   @plu     _     _    _ 
+   @num  _    _    _    _    _       @com    Numpad4    Numpad5    Numpad6   @moi     _     _ 
+   _     _    _    _    _    _        _      _          Numpad7    Numpad8   Numpad9  @mul  _
    Numpad0 
   )
 
@@ -63,7 +70,15 @@
    _  _      _    _    _    _       _    _    _    _    _       _       _    _
    _  _      _    _    _    _       _    @lr  @rr  _    _       _       _    _ 
    _  _      _    _    _    _       _    @lp  @rp  _    _       _       _ 
-   _  @pairs _    _    _    _       _    @ls  @rs  _    _       _       _
+   _  @pairs _    _    _    _       _    _    @ls  @rs  _        _      _
+   _
+  )
+
+  (deflayer arrows
+   _  _    _    _    _    _       _    _    _    _    _       _       _    _
+   _  _    _    _    _    _       _    _    _    _    _       _       _    _ 
+   _  _    _    _    _    _       _    _    _    _    _       _       _ 
+   _  _    _    _    _    _       _    _    _    _    _       _       _
    _
   )
 
