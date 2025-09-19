@@ -1,5 +1,5 @@
 (defcfg
- process-unmapped-keys yes
+ process-unmapped-keys (all-except lctl ralt)
  )
 
 (defvar
@@ -9,8 +9,7 @@
 
   (defalias
    num  (tap-hold 200 200 esc (layer-toggle numpad))
-   pairs (tap-hold 200 200 d (layer-toggle pairs))
-   qshft (tap-hold 200 200 q lsft)
+   pairs (tap-hold 200 200 IntlBackslash (layer-toggle pairs))
    a (tap-hold $tap-time $tap-time a (layer-toggle arrows))
 
    lp (unicode "(")
@@ -47,7 +46,7 @@
    esc  1    2    3    4    5       6    7    8    9    0       -    =    bspc
    tab  a    z    e    r    t       y    u    i    o    p       [    ]    ret 
    caps q    s    d    f    g       h    j    k    l    m       '    \ 
-   lsft IntlBackslash    w    x    c    v       b    n    ,    ;    :       !    rsft
+   lsft IntlBackslash    w    x    c    v       b    n    ,    ;    Period       Slash    rsft
    spc
   )
 
@@ -55,7 +54,7 @@
    esc  1      2    3    4    5       6    7    8    9    0       -    =    bspc
    tab  @a     z    e    r    t       y    u    i    o    p       [    ]    ret 
    @num @q     @s   @d   @f   g       h    @j   @k   @l   @m      '    \
-   lsft @pairs w    x    c    v       b    n    ,    ;    :       !       rsft
+   lsft @pairs w    x    c    v       b    n    ,    ;    Period       Slash       rsft
    spc
   )
 
