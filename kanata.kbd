@@ -15,7 +15,7 @@
 
   (defalias
    caps  (tap-hold 200 200 esc (tap-hold $tap-time $hold-time f (layer-toggle numbers)))
-   nav  (tap-hold $tap-time $hold-time  c    (layer-toggle navigation))
+   nav  (tap-hold $tap-time $hold-time  spc    (layer-toggle navigation))
    ;; num   (tap-hold $tap-time $hold-time f (layer-toggle numbers))
 
    q (multi f24 (tap-hold $tap-time $hold-time q lmet))
