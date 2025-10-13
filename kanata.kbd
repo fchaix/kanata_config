@@ -15,7 +15,7 @@
 
   (defalias
    caps  (tap-hold 200 200 esc (tap-hold $tap-time $hold-time f (layer-toggle numbers)))
-   arr   (tap-hold $tap-time $hold-time  c    (layer-toggle arrow))
+   nav  (tap-hold $tap-time $hold-time  c    (layer-toggle navigation))
    ;; num   (tap-hold $tap-time $hold-time f (layer-toggle numbers))
 
    q (multi f24 (tap-hold $tap-time $hold-time q lmet))
@@ -31,15 +31,15 @@
   (deflayer base
    _   _   _   _   _   _   _   _   _   _
    @caps   @q   @s   @d   @f   _  _   @j   @k   @l   @m
-   _   _   @arr   _   _   _   _   _   _   _
-   _
+   _   _   _   _   _   _   _   _   _   _
+   @nav
   )
 
-  (deflayer arrow
+  (deflayer navigation
+   Tab   Home   PageUp   End   _   _   _   _   _   _
+   _   _   left   down   right   PageDown   _   _   _   _   _
    _   _   _   _   _   _   _   _   _   _
-   _   _   _   _   _   _   left   down   up   right   _
-   _   _   @arr   _   _   _   _   _   _   _
-   _
+   @nav
   )
 
   (deflayer numbers
