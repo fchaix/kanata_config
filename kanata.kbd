@@ -8,9 +8,11 @@
  )
 
   (defalias
-   num  (tap-hold 200 200 esc (layer-toggle numpad))
+   ;;num  (tap-hold 200 200 esc (layer-toggle numpad))
+   num  (tap-dance 200 (esc (layer-switch mouse)))
    pairs (tap-hold 200 200 IntlBackslash (layer-toggle pairs))
    a (tap-hold $tap-time $tap-time a (layer-toggle arrows))
+   base (layer-switch base)
 
    lp (unicode "(")
    rp (unicode ")")
@@ -35,6 +37,19 @@
    k (tap-hold $tap-time $hold-time k rsft)
    l (tap-hold $tap-time $hold-time l ralt)
    m (tap-hold $tap-time $hold-time m rmet)
+
+   ;; aliases navigation à la souris
+   msu (movemouse-up 4 4)
+   msd (movemouse-down 4 4)
+   msl (movemouse-left 4 4)
+   msr (movemouse-right 4 4)
+   fst (movemouse-speed 200)
+   slw (movemouse-speed 50)
+   vslw (movemouse-speed 25)
+   vvslw (movemouse-speed 5)
+
+  ;; tap-hold raccourci pour la barre d'espace : tap = espace, hold = ctrl+left meta
+  ;;spc (tap-hold $tap-time $hold-time spc (multi C- M- ))
   )
 
   (deflocalkeys-win
@@ -53,8 +68,10 @@
   (deflayer base
    esc  1      2    3    4    5       6    7    8    9    0       -    =    bspc
    tab  @a     z    e    r    t       y    u    i    o    p       [    ]    ret 
-   @num @q     @s   @d   @f   g       h    @j   @k   @l   @m      '    \
+   ;;@num @q     @s   @d   @f   g       h    @j   @k   @l   @m      '    \
+   esc @q     @s   @d   @f   g       h    @j   @k   @l   @m      '    \
    lsft @pairs w    x    c    v       b    n    ,    ;    Period       Slash       rsft
+   ;;@spc
    spc
   )
 
@@ -78,6 +95,14 @@
    _  _    _    _    _    _       _    _    _    _    _       _       _    _
    _  @a    _    _    _    _       _    _    _    _    _       _       _    _ 
    _  _    _    _    _    _       ArrowLeft    ArrowDown    ArrowUp    ArrowRight    _       _       _ 
+   _  _    _    _    _    _       _    _    _    _    _       _       _
+   _
+  )
+
+   (deflayer mouse
+   _  _    _    _    _    _       _    _    _    _    _       _       _    _
+   _  @vvslw    @vslw    @slw    @fst    _       _    @vslw    @slw    @fst    _       _       _    _ 
+   @base  _    mrgt    mmid    mlft    _       @msl    @msd    @msu    @msr    _       _       _ 
    _  _    _    _    _    _       _    _    _    _    _       _       _
    _
   )
