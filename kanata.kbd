@@ -50,6 +50,9 @@
 
   ;; tap-hold raccourci pour la barre d'espace : tap = espace, hold = ctrl+left meta
   ;;spc (tap-hold $tap-time $hold-time spc (multi C- M- ))
+
+  ;; tap-dance to remap esc to 1 tap = esc, 2 tap = caps
+  escaps (tap-dance 200 (esc caps))
   )
 
   (deflocalkeys-win
@@ -66,10 +69,10 @@
   )
 
   (deflayer base
-   esc  1      2    3    4    5       6    7    8    9    0       -    =    bspc
+   @escaps  1      2    3    4    5       6    7    8    9    0       -    =    bspc
    tab  @a     z    e    r    t       y    u    i    o    p       [    ]    ret 
    ;;@num @q     @s   @d   @f   g       h    @j   @k   @l   @m      '    \
-   esc @q     @s   @d   @f   g       h    @j   @k   @l   @m      '    \
+   @escaps @q     @s   @d   @f   g       h    @j   @k   @l   @m      '    \
    lsft @pairs w    x    c    v       b    n    ,    ;    Period       Slash       rsft
    ;;@spc
    spc
