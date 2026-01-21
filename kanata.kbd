@@ -8,8 +8,8 @@
  )
 
   (defalias
-   ;;num  (tap-hold 200 200 esc (layer-toggle numpad))
-   num  (tap-dance 200 (esc (layer-switch mouse)))
+   c  (tap-hold 200 200 c (layer-toggle numpad))
+   mouse  (tap-dance 200 (esc (layer-switch mouse)))
    pairs (tap-hold 200 200 IntlBackslash (layer-toggle pairs))
    a (tap-hold $tap-time $tap-time a (layer-toggle arrows))
    base (layer-switch base)
@@ -29,14 +29,14 @@
    mul (unicode "*")
 
    ;; Homerow mods
-   q (tap-hold $tap-time $hold-time q lmet)
-   s (tap-hold $tap-time $hold-time s lalt)
+   q (tap-hold $tap-time $hold-time q lalt)
+   s (tap-hold $tap-time $hold-time s lmet)
    d (tap-hold $tap-time $hold-time d lsft)
    f (tap-hold $tap-time $hold-time f lctl)
    j (tap-hold $tap-time $hold-time j rctl)
    k (tap-hold $tap-time $hold-time k rsft)
-   l (tap-hold $tap-time $hold-time l ralt)
-   m (tap-hold $tap-time $hold-time m rmet)
+   l (tap-hold $tap-time $hold-time l rmet)
+   m (tap-hold $tap-time $hold-time m ralt)
 
    ;; aliases navigation à la souris
    msu (movemouse-up 4 4)
@@ -66,24 +66,24 @@
    caps q    s    d    f    g       h    j    k    l    m       '    \ 
    lsft IntlBackslash    w    x    c    v       b    n    ,    ;    Period       Slash    rsft
    spc
-  )
+   )
 
   (deflayer base
    @escaps  1      2    3    4    5       6    7    8    9    0       -    =    bspc
    tab  @a     z    e    r    t       y    u    i    o    p       [    ]    ret 
    ;;@num @q     @s   @d   @f   g       h    @j   @k   @l   @m      '    \
    @escaps @q     @s   @d   @f   g       h    @j   @k   @l   @m      '    \
-   lsft @pairs w    x    c    v       b    n    ,    ;    Period       Slash       rsft
+   lsft @pairs w    x    @c    v       b    n    ,     ;    Period       Slash       rsft
    ;;@spc
    spc
   )
 
-  (deflayer numpad
-   _     _    _    _    _    _       _       _          _          _         _        _     _    _
-   _     _    _    _    _    _       @dot    Numpad1    Numpad2    Numpad3   @plu     _     _    _ 
-   @num  _    _    _    _    _       @com    Numpad4    Numpad5    Numpad6   @moi     _     _ 
-   _     _    _    _    _    _        _      _          Numpad7    Numpad8   Numpad9  @mul  _
-   Numpad0 
+ (deflayer numpad
+   _  _    _    _    _    _       _    _    _    _    _       _       _    _
+   _  _    _    _    _    _       _    _    _    _    _       _       _    _ 
+   _  _    _    _    _    _       _    _    _    _    _       _       _ 
+   _  _    _    _    @c    _       _    _    _    Numpad7    Numpad8       Numpad9       _
+   Numpad0
   )
 
   (deflayer pairs
@@ -97,7 +97,7 @@
   (deflayer arrows
    _  _    _    _    _    _       _    _    _    _    _       _       _    _
    _  @a    _    _    _    _       _    _    _    _    _       _       _    _ 
-   _  _    _    _    _    _       ArrowLeft    ArrowDown    ArrowUp    ArrowRight    _       _       _ 
+   _  _    mrgt    mmid    mlft    _       ArrowLeft    ArrowDown    ArrowUp    ArrowRight    _       _       _ 
    _  _    _    _    _    _       _    _    _    _    _       _       _
    _
   )
