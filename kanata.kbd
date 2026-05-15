@@ -14,36 +14,18 @@
  hold-time  200
 )
 
-;; Couche dédiée pour les modificateurs fantômes
-(deflayer mods
-  _ _ _ _ _ _ _ _ _ _
-  _ @q @s @d @f _ _ @j @k @l @m
-  _ _ _ _ _ _ _ _ _ _
-  _
-)
-
 (defalias
-  ;; Couche de base : tape sur la couche 'mods'
-  q (layer-switch mods)
-  s (layer-switch mods)
-  d (layer-switch mods)
-  f (layer-switch mods)
-  j (layer-switch mods)
-  k (layer-switch mods)
-  l (layer-switch mods)
-  m (layer-switch mods)
-
-  ;; Dans la couche mods, ces touches deviennent des modificateurs
-  qmod (tap-hold $tap-time $hold-time q lalt)
-  smod (tap-hold $tap-time $hold-time s rmet)
-  dmod (tap-hold $tap-time $hold-time d lsft)
-  fmod (tap-hold $tap-time $hold-time f lctl)
-  jmod (tap-hold $tap-time $hold-time j rctl)
-  kmod (tap-hold $tap-time $hold-time k rsft)
-  lmod (tap-hold $tap-time $hold-time l rmet)
-  mmod (tap-hold $tap-time $hold-time Semicolon ralt)
-
-  caps (tap-hold 200 200 esc (tap-hold $tap-time $hold-time f (layer-toggle numbers)))
+  ;; Home row mods sans multi, sans f24
+  q (tap-hold $tap-time $hold-time q lalt)
+  s (tap-hold $tap-time $hold-time s rmet)
+  d (tap-hold $tap-time $hold-time d lsft)
+  f (tap-hold $tap-time $hold-time f lctl)
+  j (tap-hold $tap-time $hold-time j rctl)
+  k (tap-hold $tap-time $hold-time k rsft)
+  l (tap-hold $tap-time $hold-time l rmet)
+  m (tap-hold $tap-time $hold-time Semicolon ralt)
+  
+  caps (tap-hold 200 200 esc (layer-toggle numbers))
   nav (tap-hold $tap-time $hold-time spc (layer-toggle navigation))
 )
 
