@@ -1,51 +1,69 @@
 (deflocalkeys-linux
  ! 161
- )
+)
+
 (defsrc
  a   z   e   r   t   y   u   i   o   p
  caps   q   s   d   f   g   h   j   k   l   Semicolon
  w   x   c   v   b   n   KeyM   Comma   Period   Slash
  spc
- )
+)
 
 (defvar
  tap-time   200
  hold-time  200
- )
+)
 
-  (defalias
-   caps  (tap-hold 200 200 esc (tap-hold $tap-time $hold-time f (layer-toggle numbers)))
-   nav  (tap-hold $tap-time $hold-time  spc    (layer-toggle navigation))
-   ;; num   (tap-hold $tap-time $hold-time f (layer-toggle numbers))
+;; Couche dédiée pour les modificateurs fantômes
+(deflayer mods
+  _ _ _ _ _ _ _ _ _ _
+  _ @q @s @d @f _ _ @j @k @l @m
+  _ _ _ _ _ _ _ _ _ _
+  _
+)
 
-   q (multi f24 (tap-hold $tap-time $hold-time q lalt))
-   s (multi f24 (tap-hold $tap-time $hold-time s rmet))
-   d (multi f24 (tap-hold $tap-time $hold-time d lsft))
-   f (multi f24 (tap-hold $tap-time $hold-time f lctl))
-   j (multi f24 (tap-hold $tap-time $hold-time j rctl))
-   k (multi f24 (tap-hold $tap-time $hold-time k rsft))
-   l (multi f24 (tap-hold $tap-time $hold-time l rmet))
-   m (multi f24 (tap-hold $tap-time $hold-time Semicolon ralt))
-  )
+(defalias
+  ;; Couche de base : tape sur la couche 'mods'
+  q (layer-switch mods)
+  s (layer-switch mods)
+  d (layer-switch mods)
+  f (layer-switch mods)
+  j (layer-switch mods)
+  k (layer-switch mods)
+  l (layer-switch mods)
+  m (layer-switch mods)
 
-  (deflayer base
-   _   _   _   _   _   _   _   _   _   _
-   @caps   @q   @s   @d   @f   _  _   @j   @k   @l   @m
-   _   _   _   _   _   _   _   _   _   _
-   @nav
-  )
+  ;; Dans la couche mods, ces touches deviennent des modificateurs
+  qmod (tap-hold $tap-time $hold-time q lalt)
+  smod (tap-hold $tap-time $hold-time s rmet)
+  dmod (tap-hold $tap-time $hold-time d lsft)
+  fmod (tap-hold $tap-time $hold-time f lctl)
+  jmod (tap-hold $tap-time $hold-time j rctl)
+  kmod (tap-hold $tap-time $hold-time k rsft)
+  lmod (tap-hold $tap-time $hold-time l rmet)
+  mmod (tap-hold $tap-time $hold-time Semicolon ralt)
 
-  (deflayer navigation
-   Tab   Home   PageUp   End   _   _   _   _   _   _
-   _   _   left   down   right   PageDown   _   _   _   _   _
-   _   _   _   _   _   _   _   _   _   _
-   @nav
-  )
+  caps (tap-hold 200 200 esc (tap-hold $tap-time $hold-time f (layer-toggle numbers)))
+  nav (tap-hold $tap-time $hold-time spc (layer-toggle navigation))
+)
 
-  (deflayer numbers
-   _   _   _   _   _   _   _   Numpad7   Numpad8   Numpad9  
-   @caps   _   _   _   _   _   _   _   Numpad4   Numpad5   Numpad6
-   _   _   _   _   _   _   _   Numpad1   Numpad2   Numpad3
-   Numpad0
-  )
+(deflayer base
+  _   _   _   _   _   _   _   _   _   _
+  @caps   @q   @s   @d   @f   _  _   @j   @k   @l   @m
+  _   _   _   _   _   _   _   _   _   _
+  @nav
+)
 
+(deflayer navigation
+  Tab   Home   PageUp   End   _   _   _   _   _   _
+  _   _   left   down   right   PageDown   _   _   _   _   _
+  _   _   _   _   _   _   _   _   _   _
+  @nav
+)
+
+(deflayer numbers
+  _   _   _   _   _   _   _   Numpad7   Numpad8   Numpad9  
+  @caps   _   _   _   _   _   _   _   Numpad4   Numpad5   Numpad6
+  _   _   _   _   _   _   _   Numpad1   Numpad2   Numpad3
+  Numpad0
+)
